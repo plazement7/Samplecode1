@@ -1,0 +1,9 @@
+test('Login Test and Capture Screenshot', async ({page}) =>
+await page.goto("example.com");
+await page.fill('#email','user@example.com');
+await page.fill('#password','correctpassword123');
+await page.click('#loginButton');
+await expect(page).toHaveURL(/.*dashboard.*/);
+await page.screenshot({path:'screenshots/login-success.png'});
+
+});
